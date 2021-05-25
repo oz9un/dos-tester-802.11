@@ -16,7 +16,7 @@ DoS Tester successfully performs the following attacks:
 
     In this attack, where both access points and clients can be received as a target, the access point sends 'Deauthentication' packets to the source address of 'Association Request' packets. 
 
-    Thus, clients on the line can be disconnected by this method. Very cool way to perform **deauth attack! 😎 **.
+    Thus, clients on the line can be disconnected by this method. Very cool way to perform **deauth attack! 😎**.
 
     While performing these operations, the resources of the access point, which has to constantly check the 'Authentication' status of the source addresses, are restricted. 
 
