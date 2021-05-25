@@ -46,11 +46,17 @@ DoS-Tester has six arguments:
 
 
 
+
+**probeReq:**
 ```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst FF:FF:FF:FF:FF:F1 -i wlan0mon -p probeReq -c 50
-
+```
+**authReq:**
+```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 22:22:22:11:11:11 -i wlan0mon -p authReq -c 190
-
+```
+**assocReq:**
+```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p assocReq -c 50 -ssid "oz9un!"
 ```
 
