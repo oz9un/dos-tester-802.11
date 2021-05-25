@@ -60,6 +60,17 @@ DoS-Tester has six arguments:
 ![Help Menu](https://i.ibb.co/V2ghDwq/Screenshot-408.png)
 
 
+# Upcoming Features 🔜
+
+- **Beacon Flood**
+
+- **Disassociation Flood**
+
+- **Deauthentication Flood**
+
+- **EAPOL Start-Logoff Flood 🐐**
+
+
 ## Disclaimer ⛔
 
 All information and software available on this page are for educational purposes only. Use these at your own discretion, the repository owners cannot be held responsible for any damages caused.
