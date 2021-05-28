@@ -72,7 +72,7 @@ DoS-Tester has six arguments:
 
 # Upcoming Features 🔜
 
-- [x] **Beacon Flood**
+- [x] **Beacon Flood** (**Not tested yet**)
 
 - [ ] **Disassociation Flood**
 
