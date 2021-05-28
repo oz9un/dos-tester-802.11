@@ -16,7 +16,7 @@ DoS Tester successfully performs the following attacks:
 
     In this attack, where both access points and clients can be received as a target, the access point sends 'Deauthentication' packets to the source address of 'Association Request' packets. 
 
-    Thus, clients on the line can be disconnected by this method. Very cool way to perform **deauth attack! 😎 **.
+    Thus, clients on the line can be disconnected by this method. Very cool way to perform **deauth attack! 😎**.
 
     While performing these operations, the resources of the access point, which has to constantly check the 'Authentication' status of the source addresses, are restricted. 
 
@@ -46,11 +46,17 @@ DoS-Tester has six arguments:
 
 
 
+
+**probeReq:**
 ```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst FF:FF:FF:FF:FF:F1 -i wlan0mon -p probeReq -c 50
-
+```
+**authReq:**
+```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 22:22:22:11:11:11 -i wlan0mon -p authReq -c 190
-
+```
+**assocReq:**
+```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p assocReq -c 50 -ssid "oz9un!"
 ```
 
@@ -73,6 +79,6 @@ DoS-Tester has six arguments:
 
 ## Disclaimer ⛔
 
-All information and software available on this page are for educational purposes only. Use these at your own discretion, the repository owners cannot be held responsible for any damages caused.
+All information and software available on this page are for educational and test purposes only. Use these at your own discretion, the repository owners cannot be held responsible for any damages caused.
 
-Usage of all tools on this site for attacking targets without prior mutual consent is illegal. It is the end user’s responsibility to obey all applicable local, state and federal laws. We assume no liability and are not responsible for any misuse or damage caused by this repository.
+Usage of all tools on this repository for attacking targets without prior mutual consent is illegal. It is the end user’s responsibility to obey all applicable local, state and federal laws. We assume no liability and are not responsible for any misuse or damage caused by this repository.
