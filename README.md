@@ -59,9 +59,9 @@ DoS-Tester has six arguments:
 ```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p assocReq -c 50 -ssid "oz9un!"
 ```
-**beacon:**
+**beacon: send a beacon packet every 100 milliseconds, not works with count right now.**
 ```bash
-└─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p beacon -c 50 -ssid "oz9un!"
+└─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p beacon -ssid "oz9un!"
 ```
 
   
