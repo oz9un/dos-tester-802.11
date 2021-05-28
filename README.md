@@ -72,13 +72,13 @@ DoS-Tester has six arguments:
 
 # Upcoming Features 🔜
 
-- **Beacon Flood**
+- [x] **Beacon Flood**
 
-- **Disassociation Flood**
+- [ ] **Disassociation Flood**
 
-- **Deauthentication Flood**
+- [ ] **Deauthentication Flood**
 
-- **EAPOL Start-Logoff Flood 🐐**
+- [ ] **EAPOL Start-Logoff Flood 🐐**
 
 
 ## Disclaimer ⛔
