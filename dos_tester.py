@@ -69,15 +69,18 @@ class Flooder:
     def beaconSender(self):
         beacon = Dot11Beacon(cap='ESS+privacy')
         dot11elt = Dot11Elt(ID='SSID',info=self.ssid, len=len(self.ssid))
-        rsn = Dot11Elt(ID='RSNinfo', info=(
-        '\x01\x00'
-        '\x00\x0f\xac\x02'
-        '\x02\x00'
-        '\x00\x0f\xac\x04'
-        '\x00\x0f\xac\x02'
-        '\x01\x00'
-        '\x00\x0f\xac\x02'
-        '\x00\x00'))
+
+        rsn_array = [b'\x01\x00',
+        b'\x00\x0f\xac\x04',
+        b'\x02\x00',
+        b'\x00\x0f\xac\x04',
+        b'\x00\x0f\xac\x02',
+        b'\x01\x00',
+        b'\x00\x0f\xac\x02',
+        b'\x00\x00']
+        rsn_bytes = b''.join(rsn_array)
+
+        rsn = Dot11Elt(ID='RSNinfo', info=rsn_bytes, len=len(rsn_bytes))
 
         # RSN infos: taken from -> https://www.4armed.com/blog/forging-wifi-beacon-frames-using-scapy/
         # rsn = Dot11Elt(ID='RSNinfo', info=(
@@ -91,7 +94,7 @@ class Flooder:
         # '\x00\x00'))            #RSN Capabilities (no extra capabilities)
 
         frame = RadioTap()/self.dot11/beacon/dot11elt/rsn
-        sendp(frame, iface=self.interface, inter=0.100, loop=1)
+        sendp(frame, iface=self.interface, inter=0.1, loop=1)
 
 
         
