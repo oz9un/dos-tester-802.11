@@ -59,6 +59,10 @@ DoS-Tester has six arguments:
 ```bash
 └─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p assocReq -c 50 -ssid "oz9un!"
 ```
+**beacon:**
+```bash
+└─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p beacon -c 50 -ssid "oz9un!"
+```
 
   
 ## Help Menu 👼
@@ -68,13 +72,13 @@ DoS-Tester has six arguments:
 
 # Upcoming Features 🔜
 
-- **Beacon Flood**
+- [x] **Beacon Flood** (**Not tested yet**)
 
-- **Disassociation Flood**
+- [ ] **Disassociation Flood**
 
-- **Deauthentication Flood**
+- [ ] **Deauthentication Flood**
 
-- **EAPOL Start-Logoff Flood 🐐**
+- [ ] **EAPOL Start-Logoff Flood 🐐**
 
 
 ## Disclaimer ⛔
