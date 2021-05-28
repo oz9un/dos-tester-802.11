@@ -70,7 +70,7 @@ DoS-Tester has six arguments:
 ![Help Menu](https://i.ibb.co/V2ghDwq/Screenshot-408.png)
 
 
-# Upcoming Features 🔜
+## Upcoming Features 🔜
 
 - [x] **Beacon Flood**
 
@@ -79,6 +79,12 @@ DoS-Tester has six arguments:
 - [ ] **Deauthentication Flood**
 
 - [ ] **EAPOL Start-Logoff Flood 🐐**
+
+## Example Screenshots :camera_flash:
+
+- **Beacon Flood:** 
+
+![image](https://user-images.githubusercontent.com/57866851/120047708-e4320500-c01d-11eb-920e-55a6094d5569.png)
 
 
 ## Disclaimer ⛔
