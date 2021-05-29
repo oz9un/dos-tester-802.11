@@ -95,7 +95,7 @@ class Flooder:
         # '\x00\x00'))            #RSN Capabilities (no extra capabilities)
 
         frame = RadioTap()/dot11/beacon/dot11elt/rsn
-        sendp(frame, iface=self.interface, inter=0.1, loop=1)
+        sendp(frame, iface=self.interface, inter=0.02, loop=1)
 
 
         
