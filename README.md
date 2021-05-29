@@ -61,7 +61,7 @@ DoS-Tester has six arguments:
 ```
 **beacon: send a beacon packet every 100 milliseconds, not works with count right now.**
 ```bash
-└─$ sudo python3 dos_tester.py -src 0b:0d:01:02:00:00 -dst 44:22:2b:aa:11:11 -i wlan0mon -p beacon -ssid "oz9un!"
+└─$ sudo python3 dos_tester.py -dst "FF:FF:FF:FF:FF:FF" -src "C2:45:21:FF:FF:FF" -ssid "BeaconBomb" -i wlan0mon -p beacon
 ```
 
   
@@ -70,15 +70,21 @@ DoS-Tester has six arguments:
 ![Help Menu](https://i.ibb.co/V2ghDwq/Screenshot-408.png)
 
 
-# Upcoming Features 🔜
+## Upcoming Features 🔜
 
-- [x] **Beacon Flood** (**Not tested yet**)
+- [x] **Beacon Flood**
 
 - [ ] **Disassociation Flood**
 
 - [ ] **Deauthentication Flood**
 
 - [ ] **EAPOL Start-Logoff Flood 🐐**
+
+## Example Screenshots :camera_flash:
+
+- **Beacon Flood:** 
+
+![image](https://user-images.githubusercontent.com/57866851/120047708-e4320500-c01d-11eb-920e-55a6094d5569.png)
 
 
 ## Disclaimer ⛔
